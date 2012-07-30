@@ -68,8 +68,8 @@ void ofxSphere(float x, float y, float z, float width, float height, float depth
 	glPopMatrix();
 	
 }
-//overloaded for ofVec
-void ofxSphere(ofVec3f position, float size){
+//overloaded for ofxVec
+void ofxSphere(ofxVec3f position, float size){
 	if(sphereList == 0) ofxCreateSphereList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -77,7 +77,7 @@ void ofxSphere(ofVec3f position, float size){
 	glCallList(sphereList);
 	glPopMatrix();
 }
-void ofxSphere(ofVec3f position, ofVec3f size){
+void ofxSphere(ofxVec3f position, ofxVec3f size){
 	if(sphereList == 0) ofxCreateSphereList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -86,7 +86,7 @@ void ofxSphere(ofVec3f position, ofVec3f size){
 	glPopMatrix();
 	
 }
-void ofxSphere(ofVec3f position, ofVec3f size, ofVec3f rotation){
+void ofxSphere(ofxVec3f position, ofxVec3f size, ofxVec3f rotation){
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
 	glRotatef(rotation.x, 1.0f, 0.0f, 0.0f);
@@ -190,8 +190,8 @@ void ofxBox(float x, float y, float z, float width, float height, float depth, f
 	glCallList(boxList);
 	glPopMatrix();
 }
-//ofVec3f:
-void ofxBox(ofVec3f position, float size){
+//ofxVec3f:
+void ofxBox(ofxVec3f position, float size){
 	if(boxList == 0) ofxCreateBoxList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -199,7 +199,7 @@ void ofxBox(ofVec3f position, float size){
 	glCallList(boxList);
 	glPopMatrix();
 }
-void ofxBox(ofVec3f position, ofVec3f size){
+void ofxBox(ofxVec3f position, ofxVec3f size){
 	if(boxList == 0) ofxCreateBoxList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -207,7 +207,7 @@ void ofxBox(ofVec3f position, ofVec3f size){
 	glCallList(boxList);
 	glPopMatrix();
 }
-void ofxBox(ofVec3f position, ofVec3f size, ofVec3f rotation){
+void ofxBox(ofxVec3f position, ofxVec3f size, ofxVec3f rotation){
 	if(boxList == 0) ofxCreateBoxList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -228,7 +228,7 @@ void ofxCreateConeList(){
 	glNewList(coneList, GL_COMPILE);
 	float angle, x, y, z;
 	
-	ofVec3f vecA, vecB, normalVec;
+	ofxVec3f vecA, vecB, normalVec;
 	//the cone
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(0.0f, -0.5f, 0.0f);
@@ -287,8 +287,8 @@ void ofxCone(float x, float y, float z, float width, float height, float depth, 
 	glCallList(coneList);
 	glPopMatrix();
 }
-//ofVec3f
-void ofxCone(ofVec3f position, float size){
+//ofxVec3f
+void ofxCone(ofxVec3f position, float size){
 	if(coneList == 0) ofxCreateConeList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -296,7 +296,7 @@ void ofxCone(ofVec3f position, float size){
 	glCallList(coneList);
 	glPopMatrix();
 }
-void ofxCone(ofVec3f position, ofVec3f size){
+void ofxCone(ofxVec3f position, ofxVec3f size){
 	if(coneList == 0) ofxCreateConeList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -304,7 +304,7 @@ void ofxCone(ofVec3f position, ofVec3f size){
 	glCallList(coneList);
 	glPopMatrix();
 }
-void ofxCone(ofVec3f position, ofVec3f size, ofVec3f rotation){
+void ofxCone(ofxVec3f position, ofxVec3f size, ofxVec3f rotation){
 	if(coneList == 0) ofxCreateConeList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -400,8 +400,8 @@ void ofxCapsule(float x, float y, float z, float width, float height, float dept
 	glCallList(capsuleList);
 	glPopMatrix();
 }
-//ofVec3f
-void ofxCapsule(ofVec3f position, float size){
+//ofxVec3f
+void ofxCapsule(ofxVec3f position, float size){
 	if(capsuleList == 0)ofxCreateCapsuleList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -409,7 +409,7 @@ void ofxCapsule(ofVec3f position, float size){
 	glCallList(capsuleList);
 	glPopMatrix();
 }
-void ofxCapsule(ofVec3f position, ofVec3f size){
+void ofxCapsule(ofxVec3f position, ofxVec3f size){
 	if(capsuleList == 0)ofxCreateCapsuleList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -418,7 +418,7 @@ void ofxCapsule(ofVec3f position, ofVec3f size){
 	glPopMatrix();
 			 
 }
-void ofxCapsule(ofVec3f position, ofVec3f size, ofVec3f rotation){
+void ofxCapsule(ofxVec3f position, ofxVec3f size, ofxVec3f rotation){
 	if(capsuleList == 0)ofxCreateCapsuleList();
 	glPushMatrix();
 	glTranslatef(position.x, position.y, position.z);
@@ -447,7 +447,7 @@ void ofxLine(float x1, float y1, float z1, float x2, float y2, float z2){
 	glVertex3f(x2, y2, z2);
 	glEnd();
 }
-void ofxLine(ofVec3f pos1, ofVec3f pos2){
+void ofxLine(ofxVec3f pos1, ofxVec3f pos2){
 	glBegin(GL_LINES);
 	glVertex3f(pos1.x, pos1.y, pos1.z);
 	glVertex3f(pos2.x, pos2.y, pos2.z);
@@ -459,7 +459,7 @@ void ofxPoint(float x, float y, float z){
 	glVertex3f(x, y, z);
 	glEnd();
 }
-void ofxPoint(ofVec3f pos){
+void ofxPoint(ofxVec3f pos){
 	glBegin(GL_POINTS);
 	glVertex3f(pos.x, pos.y, pos.z);
 	glEnd();
@@ -473,7 +473,7 @@ void ofxQuad(float x1, float y1, float z1, float x2, float y2, float z2, float x
 	glVertex3f(x4, y4, z4);
 	glEnd();
 }
-void ofxQuad(ofVec3f pos1, ofVec3f pos2, ofVec3f pos3, ofVec3f pos4){
+void ofxQuad(ofxVec3f pos1, ofxVec3f pos2, ofxVec3f pos3, ofxVec3f pos4){
 	glBegin(GL_QUADS);
 	glVertex3f(pos1.x, pos1.y, pos1.z);
 	glVertex3f(pos2.x, pos2.y, pos2.z);
@@ -489,7 +489,7 @@ void ofxTriangle(float x1, float y1, float z1, float x2, float y2, float z2, flo
 	glVertex3f(x3, y3, z3);
 	glEnd();
 }
-void ofxTriangle(ofVec3f pos1, ofVec3f pos2, ofVec3f pos3){
+void ofxTriangle(ofxVec3f pos1, ofxVec3f pos2, ofxVec3f pos3){
 	glBegin(GL_TRIANGLES);
 	glVertex3f(pos1.x, pos1.y, pos1.z);
 	glVertex3f(pos2.x, pos2.y, pos2.z);
@@ -528,10 +528,10 @@ void CALLBACK ofxTessCombine( GLdouble coords[3], void* vertex_data[4], GLfloat 
     *outData = vertex;
 }
 
-ofVec3f calcNormal(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3){
-	ofVec3f vecA = ofVec3f(x2-x1, y2-y1, z2-z1);
-	ofVec3f vecB = ofVec3f(x3-x2, y3-y2, z3-z2);
-	ofVec3f normalVec = vecA.cross(vecB);
+ofxVec3f calcNormal(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3){
+	ofxVec3f vecA = ofxVec3f(x2-x1, y2-y1, z2-z1);
+	ofxVec3f vecB = ofxVec3f(x3-x2, y3-y2, z3-z2);
+	ofxVec3f normalVec = vecA.cross(vecB);
 	normalVec.normalize();
 	return normalVec;
 }
@@ -603,7 +603,7 @@ void ofxVertex(float x, float y, float z){
 	vertices.push_back(z);
 }
 
-void ofxVertex(ofVec3f vertex){
+void ofxVertex(ofxVec3f vertex){
 	vertices.push_back(vertex.x);
 	vertices.push_back(vertex.y);
 	vertices.push_back(vertex.z);
@@ -622,7 +622,7 @@ void ofxEndShape(bool bClose){
 			if(shapeMode == OFX_QUADS or shapeMode == OFX_QUAD_STRIP){
 				numFaces /= 4;
 			}
-			ofVec3f normalVec;
+			ofxVec3f normalVec;
 			for(int i=0; i<vertices.size()/3; i+=9){
 				normalVec = calcNormal(vertices[i], vertices[i+1], vertices[i+2],
 									   vertices[i+3], vertices[i+4], vertices[i+5],
